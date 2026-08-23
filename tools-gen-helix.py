@@ -1,7 +1,7 @@
 import math
 
-CX, AMP = 20.2, 5.05          # helix centre-x and radius in viewBox units
-Y0, Y1  = 11.0, 37.6          # vertical extent
+CX, AMP = 24.0, 5.05          # helix centre-x and radius in viewBox units
+Y0, Y1  = 10.8, 37.2          # vertical extent
 TURNS   = 2.75                # full revolutions across that extent
 STEPS   = 180                 # sampling resolution for the strand polylines
 
