@@ -1147,10 +1147,28 @@ section {
 }
 
 .form-status[hidden] { display: none; }
+
 .form-status.is-ok {
     background: var(--green-100);
     color: var(--green-600);
     border: 1px solid rgba(46, 158, 79, 0.3);
+}
+
+.form-status.is-pending {
+    background: var(--blue-100);
+    color: var(--navy-700);
+    border: 1px solid rgba(21, 101, 192, 0.25);
+}
+
+.form-status.is-error {
+    background: #FDECEC;
+    color: #A32222;
+    border: 1px solid rgba(163, 34, 34, 0.25);
+}
+
+.contact-form button[disabled] {
+    opacity: 0.65;
+    cursor: progress;
 }
 
 /* ==========================================================================

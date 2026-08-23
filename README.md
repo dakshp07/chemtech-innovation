@@ -76,9 +76,15 @@ Still outstanding:
   rather than published as fact. Add them back once accurate.
 - **A vector logo.** `PHOTO-2026-04-05-17-43-25.jpg` is a photograph of the logo
   on a wall, so it has a grey background and cannot sit on the dark footer. The
-  nav and footer use an inline SVG that mirrors the mark; replace it with a real
-  SVG or transparent PNG when one exists.
-- **A form backend.** Submissions open the visitor's mail client via `mailto:`.
-  Point the form at Formspree, Basin or similar for reliable capture.
+  nav, footer and favicon use an inline SVG that mirrors the mark — hexagon, DNA
+  double helix, molecular nodes and growth arrow. It is an approximation; replace
+  it with a real SVG or transparent PNG when one exists.
+- **Web3Forms access key.** The contact form posts to Web3Forms, which relays
+  enquiries by email. Get a free key at https://web3forms.com (enter
+  `innovationchemtech@gmail.com`, the key arrives by email) and replace
+  `REPLACE_WITH_WEB3FORMS_ACCESS_KEY` in `index.html`. The key is public by
+  design — it only permits sending to the address it was issued for, so it is
+  safe to commit. Until it is set, the form falls back to a `mailto:` handoff,
+  so it is never a dead end.
 - **Domain email** (optional). Contact runs through a Gmail address; `info@` and
   `sales@ctiworld.online` would need mail hosting on the domain.
