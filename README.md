@@ -22,8 +22,8 @@ untrusted or public Wi-Fi.
 | `index.html` | Single-page site. All SVG icons are defined once as `<symbol>`s at the top and referenced with `<use>`. |
 | `styles.css` | Design tokens in `:root`, then components in section order. |
 | `script.js` | Progressive enhancement only. One rAF-throttled scroll listener drives the navbar, active link and back-to-top. |
-| `favicon.svg` | Standalone brand mark, same geometry as the `#i-mark` sprite symbol. |
-| `tools-gen-helix.py` | Generates the DNA double-helix geometry. Not used at runtime — run it to regenerate the strand paths if the mark needs retuning. |
+| `logo-mark.png` | Brand mark, extracted from the source photograph with the background keyed out. |
+| `favicon-32.png` / `favicon-64.png` / `apple-touch-icon.png` | Icon set generated from `logo-mark.png`. |
 | `CNAME` | Custom domain for GitHub Pages. |
 | `.nojekyll` | Serve files as-is, skip Jekyll. |
 
@@ -42,16 +42,25 @@ component rules.
 
 ## Brand mark
 
-The hexagon, double helix and growth arrow are drawn as vector geometry rather
-than traced by hand. The helix comes from `tools-gen-helix.py`: two sine-wave
-strands in antiphase, split into front and back runs by their depth (`cos` of
-the phase) so the backbones visibly cross, with rungs whose width and opacity
-track strand separation — that is what conveys rotation.
+`logo-mark.png` is the real artwork, not a redraw. It was extracted from
+`PHOTO-2026-04-05-17-43-25.jpg` (a photograph of the logo on a wall) by keying
+out the background.
 
-The mark carries real detail, so it is displayed at 54px in the nav and 64px in
-the footer. Much below ~40px the helix and lattice merge into texture. If you
-need a small-size variant, simplify the geometry rather than scaling this one
-down.
+The key could not be done on brightness: the white vine inside the hexagon is
+`(247,251,250)` and the wall behind it is `(249,251,250)` — indistinguishable. A
+plain background flood fill therefore leaked through the vine where it meets the
+hexagon edge and punched holes in the interior, visible only against the dark
+footer.
+
+The working approach uses hue, which separates cleanly: the hexagon body is
+204-220 deg, the arrow 131-148 deg. Each mask is then filled row by row, which
+is exact for a convex shape like the hexagon and closes the white interior that
+hue cannot see. The result is eroded by one pixel, since the outermost ring
+blends toward the wall grey and would otherwise fringe light against the footer.
+
+Because it is raster, it is displayed at 54px (nav) and 64px (footer) against a
+297x307 source — roughly 4x headroom, so it stays sharp on high-DPI screens. A
+true vector original would still be preferable if one can be obtained.
 
 ## Accessibility
 

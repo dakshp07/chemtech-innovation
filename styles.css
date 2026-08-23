@@ -357,10 +357,11 @@ section {
     color: var(--navy-900);
 }
 
-/* Sized generously: the mark carries a detailed helix, lattice and arrow that
-   turn to mush much below this. */
+/* The artwork is 297x307, so height is authoritative and width follows, else
+   the mark squashes. Sized generously: it carries a dense molecular network
+   that turns to mush much below this. */
 .brand-mark {
-    width: 54px;
+    width: auto;
     height: 54px;
     flex: none;
 }
@@ -388,7 +389,7 @@ section {
     margin-top: 3px;
 }
 
-.footer-about .brand-mark { width: 64px; height: 64px; }
+.footer-about .brand-mark { height: 64px; }
 
 .brand--invert { color: var(--white); }
 .brand--invert .brand-sub { color: var(--green-400); }
