@@ -22,7 +22,8 @@ untrusted or public Wi-Fi.
 | `index.html` | Single-page site. All SVG icons are defined once as `<symbol>`s at the top and referenced with `<use>`. |
 | `styles.css` | Design tokens in `:root`, then components in section order. |
 | `script.js` | Progressive enhancement only. One rAF-throttled scroll listener drives the navbar, active link and back-to-top. |
-| `favicon.svg` | Hexagon brand mark. |
+| `favicon.svg` | Standalone brand mark, same geometry as the `#i-mark` sprite symbol. |
+| `tools-gen-helix.py` | Generates the DNA double-helix geometry. Not used at runtime — run it to regenerate the strand paths if the mark needs retuning. |
 | `CNAME` | Custom domain for GitHub Pages. |
 | `.nojekyll` | Serve files as-is, skip Jekyll. |
 
@@ -38,6 +39,19 @@ hexagon gradient.
 
 Change a token in `:root` and it propagates; avoid hard-coded hex values in
 component rules.
+
+## Brand mark
+
+The hexagon, double helix and growth arrow are drawn as vector geometry rather
+than traced by hand. The helix comes from `tools-gen-helix.py`: two sine-wave
+strands in antiphase, split into front and back runs by their depth (`cos` of
+the phase) so the backbones visibly cross, with rungs whose width and opacity
+track strand separation — that is what conveys rotation.
+
+The mark carries real detail, so it is displayed at 54px in the nav and 64px in
+the footer. Much below ~40px the helix and lattice merge into texture. If you
+need a small-size variant, simplify the geometry rather than scaling this one
+down.
 
 ## Accessibility
 
@@ -76,9 +90,8 @@ Still outstanding:
   rather than published as fact. Add them back once accurate.
 - **A vector logo.** `PHOTO-2026-04-05-17-43-25.jpg` is a photograph of the logo
   on a wall, so it has a grey background and cannot sit on the dark footer. The
-  nav, footer and favicon use an inline SVG that mirrors the mark — hexagon, DNA
-  double helix, molecular nodes and growth arrow. It is an approximation; replace
-  it with a real SVG or transparent PNG when one exists.
+  nav, footer and favicon use an inline SVG approximation instead; replace it
+  with the real vector when one exists.
 - **Web3Forms access key.** The contact form posts to Web3Forms, which relays
   enquiries by email. Get a free key at https://web3forms.com (enter
   `innovationchemtech@gmail.com`, the key arrives by email) and replace

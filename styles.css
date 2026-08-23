@@ -85,7 +85,7 @@
 
     /* --- Layout ----------------------------------------------------------- */
     --container: 1180px;
-    --nav-h: 76px;
+    --nav-h: 84px;
 }
 
 html {
@@ -357,9 +357,11 @@ section {
     color: var(--navy-900);
 }
 
+/* Sized generously: the mark carries a detailed helix, lattice and arrow that
+   turn to mush much below this. */
 .brand-mark {
-    width: 38px;
-    height: 38px;
+    width: 54px;
+    height: 54px;
     flex: none;
 }
 
@@ -371,20 +373,22 @@ section {
 
 .brand-name {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.125rem;
+    font-size: 1.3125rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: currentColor;
 }
 
 .brand-sub {
-    font-size: 0.5625rem;
+    font-size: 0.625rem;
     font-weight: 650;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--accent);
     margin-top: 3px;
 }
+
+.footer-about .brand-mark { width: 64px; height: 64px; }
 
 .brand--invert { color: var(--white); }
 .brand--invert .brand-sub { color: var(--green-400); }

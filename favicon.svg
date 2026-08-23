@@ -1,20 +1,149 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
   <defs>
-    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0%" stop-color="#16305A"/>
-      <stop offset="55%" stop-color="#1565C0"/>
-      <stop offset="100%" stop-color="#46BD6B"/>
+    <linearGradient id="GRAD" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#122A50"/>
+      <stop offset="50%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#3FBF77"/>
+    </linearGradient>
+    <linearGradient id="ARROWGRAD" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4ED383"/>
+      <stop offset="100%" stop-color="#C8F7D6"/>
     </linearGradient>
   </defs>
-  <path d="M24 2.6 42.4 13.3v21.4L24 45.4 5.6 34.7V13.3z" fill="url(#g)"/>
-  <g stroke="#fff" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".95">
-    <path d="M18.4 12.5c5.6 3.1 5.6 7.2 0 10.3s-5.6 7.2 0 10.3"/>
-    <path d="M27.2 12.5c-5.6 3.1-5.6 7.2 0 10.3s5.6 7.2 0 10.3"/>
+  <!-- Hexagon: gradient body with bevel shading on the upper and left faces,
+       plus two inset rims standing in for the extruded edge. No outer stroke,
+       which would half-fall outside the fill and read as a grey halo. -->
+  <path d="M24.00 2.60L42.40 13.30L42.40 34.70L24.00 45.40L5.60 34.70L5.60 13.30Z" fill="url(#GRAD)"/>
+  <path d="M24.00 2.60L42.40 13.30L24.00 24.00L5.60 13.30Z" fill="#FFFFFF" opacity=".06"/>
+  <path d="M24.00 2.60L5.60 13.30L5.60 34.70L24.00 45.40Z" fill="#0A1526" opacity=".12"/>
+  <path d="M24.00 3.56L41.57 13.78L41.57 34.22L24.00 44.44L6.43 34.22L6.43 13.78Z" fill="none" stroke="#0A1526" stroke-width="0.8" opacity=".22"/>
+  <path d="M24.00 5.49L39.92 14.74L39.92 33.26L24.00 42.51L8.08 33.26L8.08 14.74Z" fill="none" stroke="#FFFFFF" stroke-width="0.7" opacity=".22"/>
+  <!-- Molecular lattice at lower left, mirroring the reference mark. -->
+  <g stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" fill="none" opacity=".6">
+    <path d="M10.9 27.2 14.2 29.9"/><path d="M10.9 27.2 10.3 31.6"/>
+    <path d="M10.3 31.6 13.8 34.0"/><path d="M14.2 29.9 13.8 34.0"/>
+    <path d="M14.2 29.9 17.0 27.8"/>
   </g>
-  <g stroke="#DFFCE7" stroke-width="1.25" stroke-linecap="round" opacity=".8">
-    <path d="M19.5 15.4h6.6"/><path d="M22.1 19.1h1.8"/>
-    <path d="M19.5 26.6h6.6"/><path d="M22.1 30.3h1.8"/>
+  <g fill="#FFFFFF" opacity=".88">
+    <circle cx="10.9" cy="27.2" r="1.3"/><circle cx="14.2" cy="29.9" r="1.0"/>
+    <circle cx="10.3" cy="31.6" r="1.0"/><circle cx="13.8" cy="34.0" r="1.2"/>
   </g>
-  <path d="M30.2 31.6 37.6 17.4m0 0h-6.1m6.1 0v6.1" stroke="#8FE9A8" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Double helix. Strands are depth-sorted: the receding halves are
+       drawn first and dimmed, the rungs next, then the advancing
+       halves on top, so the two backbones visibly cross. -->
+  <g stroke="#BFD9F5" stroke-width="1.15" stroke-linecap="round" fill="none" opacity=".5">
+    <path d="M25.24 13.51L25.19 13.66L25.09 13.81L24.95 13.96L24.76 14.10L24.53 14.25L24.26 14.40L23.95 14.55L23.61 14.69L23.24 14.84L22.84 14.99L22.41 15.14L21.97 15.29L21.51 15.43L21.03 15.58L20.55 15.73L20.07 15.88L19.58 16.02L19.11 16.17L18.64 16.32L18.19 16.47L17.75 16.62L17.34 16.76L16.95 16.91L16.60 17.06L16.28 17.21L15.99 17.35L15.74 17.50L15.53 17.65L15.37 17.80L15.25 17.95L15.18 18.09L15.15 18.24"/>
+    <path d="M25.25 23.12L25.22 23.27L25.14 23.41L25.02 23.56L24.85 23.71L24.64 23.86L24.39 24.00L24.10 24.15L23.77 24.30L23.41 24.45L23.02 24.60L22.61 24.74L22.17 24.89L21.72 25.04L21.25 25.19L20.77 25.33L20.29 25.48L19.80 25.63L19.32 25.78L18.85 25.93L18.39 26.07L17.95 26.22L17.52 26.37L17.13 26.52L16.76 26.66L16.42 26.81L16.11 26.96L15.85 27.11L15.62 27.26L15.44 27.40L15.30 27.55L15.21 27.70L15.16 27.85"/>
+    <path d="M25.24 32.87L25.18 33.02L25.08 33.17L24.93 33.31L24.74 33.46L24.51 33.61L24.23 33.76L23.92 33.91L23.58 34.05L23.20 34.20L22.80 34.35L22.37 34.50L21.93 34.64L21.46 34.79L20.99 34.94L20.51 35.09L20.02 35.24L19.54 35.38L19.06 35.53L18.60 35.68L18.15 35.83L17.71 35.97L17.30 36.12L16.92 36.27L16.57 36.42L16.25 36.57L15.96 36.71L15.72 36.86L15.52 37.01L15.36 37.16L15.24 37.30L15.17 37.45L15.15 37.60"/>
+    <path d="M20.20 11.00L19.72 11.15L19.24 11.30L18.77 11.44L18.31 11.59L17.87 11.74L17.45 11.89L17.06 12.03L16.69 12.18L16.36 12.33L16.06 12.48L15.80 12.63L15.59 12.77L15.41 12.92L15.28 13.07L15.19 13.22L15.15 13.36"/>
+    <path d="M25.23 18.39L25.17 18.54L25.05 18.68L24.90 18.83L24.70 18.98L24.46 19.13L24.18 19.28L23.86 19.42L23.51 19.57L23.13 19.72L22.73 19.87L22.29 20.01L21.84 20.16L21.38 20.31L20.90 20.46L20.42 20.61L19.94 20.75L19.45 20.90L18.98 21.05L18.51 21.20L18.07 21.34L17.64 21.49L17.23 21.64L16.85 21.79L16.51 21.94L16.19 22.08L15.92 22.23L15.68 22.38L15.49 22.53L15.33 22.67L15.23 22.82L15.17 22.97"/>
+    <path d="M25.25 27.99L25.20 28.14L25.11 28.29L24.97 28.44L24.80 28.59L24.57 28.73L24.31 28.88L24.01 29.03L23.68 29.18L23.31 29.32L22.91 29.47L22.49 29.62L22.05 29.77L21.59 29.92L21.12 30.06L20.64 30.21L20.16 30.36L19.67 30.51L19.19 30.65L18.72 30.80L18.27 30.95L17.83 31.10L17.41 31.25L17.02 31.39L16.66 31.54L16.33 31.69L16.04 31.84L15.78 31.98L15.57 32.13L15.40 32.28L15.27 32.43L15.19 32.58L15.15 32.72"/>
+  </g>
+  <g stroke="#DFFCE7" stroke-linecap="round">
+    <path d="M22.66 11.78L17.74 11.78" stroke-width="0.77" opacity="0.50"/>
+    <path d="M24.49 12.56L15.91 12.56" stroke-width="0.93" opacity="0.69"/>
+    <path d="M25.24 13.35L15.16 13.35" stroke-width="1.00" opacity="0.76"/>
+    <path d="M24.72 14.13L15.68 14.13" stroke-width="0.95" opacity="0.71"/>
+    <path d="M23.05 14.91L17.35 14.91" stroke-width="0.80" opacity="0.54"/>
+    <path d="M18.16 16.48L22.24 16.48" stroke-width="0.73" opacity="0.46"/>
+    <path d="M16.17 17.26L24.23 17.26" stroke-width="0.91" opacity="0.66"/>
+    <path d="M15.20 18.04L25.20 18.04" stroke-width="1.00" opacity="0.76"/>
+    <path d="M15.49 18.82L24.91 18.82" stroke-width="0.97" opacity="0.73"/>
+    <path d="M16.97 19.61L23.43 19.61" stroke-width="0.84" opacity="0.58"/>
+    <path d="M21.80 21.17L18.60 21.17" stroke-width="0.69" opacity="0.42"/>
+    <path d="M23.93 21.95L16.47 21.95" stroke-width="0.88" opacity="0.63"/>
+    <path d="M25.12 22.74L15.28 22.74" stroke-width="0.99" opacity="0.75"/>
+    <path d="M25.06 23.52L15.34 23.52" stroke-width="0.98" opacity="0.74"/>
+    <path d="M23.77 24.30L16.63 24.30" stroke-width="0.87" opacity="0.61"/>
+    <path d="M21.58 25.08L18.82 25.08" stroke-width="0.67" opacity="0.40"/>
+    <path d="M16.80 26.65L23.60 26.65" stroke-width="0.85" opacity="0.60"/>
+    <path d="M15.41 27.43L24.99 27.43" stroke-width="0.98" opacity="0.73"/>
+    <path d="M15.24 28.21L25.16 28.21" stroke-width="0.99" opacity="0.75"/>
+    <path d="M16.31 28.99L24.09 28.99" stroke-width="0.90" opacity="0.64"/>
+    <path d="M18.38 29.78L22.02 29.78" stroke-width="0.71" opacity="0.44"/>
+    <path d="M23.24 31.34L17.16 31.34" stroke-width="0.82" opacity="0.56"/>
+    <path d="M24.82 32.12L15.58 32.12" stroke-width="0.96" opacity="0.72"/>
+    <path d="M25.23 32.91L15.17 32.91" stroke-width="1.00" opacity="0.76"/>
+    <path d="M24.37 33.69L16.03 33.69" stroke-width="0.92" opacity="0.67"/>
+    <path d="M22.45 34.47L17.95 34.47" stroke-width="0.75" opacity="0.48"/>
+    <path d="M17.54 36.04L22.86 36.04" stroke-width="0.79" opacity="0.52"/>
+    <path d="M15.79 36.82L24.61 36.82" stroke-width="0.94" opacity="0.70"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" fill="none">
+    <path d="M20.20 11.00L20.68 11.15L21.16 11.30L21.63 11.44L22.09 11.59L22.53 11.74L22.95 11.89L23.34 12.03L23.71 12.18L24.04 12.33L24.34 12.48L24.60 12.63L24.81 12.77L24.99 12.92L25.12 13.07L25.21 13.22L25.25 13.36"/>
+    <path d="M15.17 18.39L15.23 18.54L15.35 18.68L15.50 18.83L15.70 18.98L15.94 19.13L16.22 19.28L16.54 19.42L16.89 19.57L17.27 19.72L17.67 19.87L18.11 20.01L18.56 20.16L19.02 20.31L19.50 20.46L19.98 20.61L20.46 20.75L20.95 20.90L21.42 21.05L21.89 21.20L22.33 21.34L22.76 21.49L23.17 21.64L23.55 21.79L23.89 21.94L24.21 22.08L24.48 22.23L24.72 22.38L24.91 22.53L25.07 22.67L25.17 22.82L25.23 22.97"/>
+    <path d="M15.15 27.99L15.20 28.14L15.29 28.29L15.43 28.44L15.60 28.59L15.83 28.73L16.09 28.88L16.39 29.03L16.72 29.18L17.09 29.32L17.49 29.47L17.91 29.62L18.35 29.77L18.81 29.92L19.28 30.06L19.76 30.21L20.24 30.36L20.73 30.51L21.21 30.65L21.68 30.80L22.13 30.95L22.57 31.10L22.99 31.25L23.38 31.39L23.74 31.54L24.07 31.69L24.36 31.84L24.62 31.98L24.83 32.13L25.00 32.28L25.13 32.43L25.21 32.58L25.25 32.72"/>
+    <path d="M15.16 13.51L15.21 13.66L15.31 13.81L15.45 13.96L15.64 14.10L15.87 14.25L16.14 14.40L16.45 14.55L16.79 14.69L17.16 14.84L17.56 14.99L17.99 15.14L18.43 15.29L18.89 15.43L19.37 15.58L19.85 15.73L20.33 15.88L20.82 16.02L21.29 16.17L21.76 16.32L22.21 16.47L22.65 16.62L23.06 16.76L23.45 16.91L23.80 17.06L24.12 17.21L24.41 17.35L24.66 17.50L24.87 17.65L25.03 17.80L25.15 17.95L25.22 18.09L25.25 18.24"/>
+    <path d="M15.15 23.12L15.18 23.27L15.26 23.41L15.38 23.56L15.55 23.71L15.76 23.86L16.01 24.00L16.30 24.15L16.63 24.30L16.99 24.45L17.38 24.60L17.79 24.74L18.23 24.89L18.68 25.04L19.15 25.19L19.63 25.33L20.11 25.48L20.60 25.63L21.08 25.78L21.55 25.93L22.01 26.07L22.45 26.22L22.88 26.37L23.27 26.52L23.64 26.66L23.98 26.81L24.29 26.96L24.55 27.11L24.78 27.26L24.96 27.40L25.10 27.55L25.19 27.70L25.24 27.85"/>
+    <path d="M15.16 32.87L15.22 33.02L15.32 33.17L15.47 33.31L15.66 33.46L15.89 33.61L16.17 33.76L16.48 33.91L16.82 34.05L17.20 34.20L17.60 34.35L18.03 34.50L18.47 34.64L18.94 34.79L19.41 34.94L19.89 35.09L20.38 35.24L20.86 35.38L21.34 35.53L21.80 35.68L22.25 35.83L22.69 35.97L23.10 36.12L23.48 36.27L23.83 36.42L24.15 36.57L24.44 36.71L24.68 36.86L24.88 37.01L25.04 37.16L25.16 37.30L25.23 37.45"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="22.66" cy="11.78" r="0.44" opacity="0.92"/>
+    <circle cx="17.74" cy="11.78" r="0.44" opacity="0.42"/>
+    <circle cx="24.49" cy="12.56" r="0.51" opacity="0.92"/>
+    <circle cx="15.91" cy="12.56" r="0.51" opacity="0.42"/>
+    <circle cx="25.24" cy="13.35" r="0.54" opacity="0.92"/>
+    <circle cx="15.16" cy="13.35" r="0.54" opacity="0.42"/>
+    <circle cx="24.72" cy="14.13" r="0.52" opacity="0.42"/>
+    <circle cx="15.68" cy="14.13" r="0.52" opacity="0.92"/>
+    <circle cx="23.05" cy="14.91" r="0.45" opacity="0.42"/>
+    <circle cx="17.35" cy="14.91" r="0.45" opacity="0.92"/>
+    <circle cx="18.16" cy="16.48" r="0.42" opacity="0.42"/>
+    <circle cx="22.24" cy="16.48" r="0.42" opacity="0.92"/>
+    <circle cx="16.17" cy="17.26" r="0.50" opacity="0.42"/>
+    <circle cx="24.23" cy="17.26" r="0.50" opacity="0.92"/>
+    <circle cx="15.20" cy="18.04" r="0.54" opacity="0.42"/>
+    <circle cx="25.20" cy="18.04" r="0.54" opacity="0.92"/>
+    <circle cx="15.49" cy="18.82" r="0.53" opacity="0.92"/>
+    <circle cx="24.91" cy="18.82" r="0.53" opacity="0.42"/>
+    <circle cx="16.97" cy="19.61" r="0.47" opacity="0.92"/>
+    <circle cx="23.43" cy="19.61" r="0.47" opacity="0.42"/>
+    <circle cx="21.80" cy="21.17" r="0.40" opacity="0.92"/>
+    <circle cx="18.60" cy="21.17" r="0.40" opacity="0.42"/>
+    <circle cx="23.93" cy="21.95" r="0.49" opacity="0.92"/>
+    <circle cx="16.47" cy="21.95" r="0.49" opacity="0.42"/>
+    <circle cx="25.12" cy="22.74" r="0.53" opacity="0.92"/>
+    <circle cx="15.28" cy="22.74" r="0.53" opacity="0.42"/>
+    <circle cx="25.06" cy="23.52" r="0.53" opacity="0.42"/>
+    <circle cx="15.34" cy="23.52" r="0.53" opacity="0.92"/>
+    <circle cx="23.77" cy="24.30" r="0.48" opacity="0.42"/>
+    <circle cx="16.63" cy="24.30" r="0.48" opacity="0.92"/>
+    <circle cx="21.58" cy="25.08" r="0.39" opacity="0.42"/>
+    <circle cx="18.82" cy="25.08" r="0.39" opacity="0.92"/>
+    <circle cx="16.80" cy="26.65" r="0.47" opacity="0.42"/>
+    <circle cx="23.60" cy="26.65" r="0.47" opacity="0.92"/>
+    <circle cx="15.41" cy="27.43" r="0.53" opacity="0.42"/>
+    <circle cx="24.99" cy="27.43" r="0.53" opacity="0.92"/>
+    <circle cx="15.24" cy="28.21" r="0.54" opacity="0.92"/>
+    <circle cx="25.16" cy="28.21" r="0.54" opacity="0.42"/>
+    <circle cx="16.31" cy="28.99" r="0.49" opacity="0.92"/>
+    <circle cx="24.09" cy="28.99" r="0.49" opacity="0.42"/>
+    <circle cx="18.38" cy="29.78" r="0.41" opacity="0.92"/>
+    <circle cx="22.02" cy="29.78" r="0.41" opacity="0.42"/>
+    <circle cx="23.24" cy="31.34" r="0.46" opacity="0.92"/>
+    <circle cx="17.16" cy="31.34" r="0.46" opacity="0.42"/>
+    <circle cx="24.82" cy="32.12" r="0.52" opacity="0.92"/>
+    <circle cx="15.58" cy="32.12" r="0.52" opacity="0.42"/>
+    <circle cx="25.23" cy="32.91" r="0.54" opacity="0.42"/>
+    <circle cx="15.17" cy="32.91" r="0.54" opacity="0.92"/>
+    <circle cx="24.37" cy="33.69" r="0.50" opacity="0.42"/>
+    <circle cx="16.03" cy="33.69" r="0.50" opacity="0.92"/>
+    <circle cx="22.45" cy="34.47" r="0.43" opacity="0.42"/>
+    <circle cx="17.95" cy="34.47" r="0.43" opacity="0.92"/>
+    <circle cx="17.54" cy="36.04" r="0.45" opacity="0.42"/>
+    <circle cx="22.86" cy="36.04" r="0.45" opacity="0.92"/>
+    <circle cx="15.79" cy="36.82" r="0.51" opacity="0.42"/>
+    <circle cx="24.61" cy="36.82" r="0.51" opacity="0.92"/>
+  </g>
+  <!-- Growth arrow, breaking out past the upper-right edge. A thin darker-green
+       edge separates it from the blue body without casting a grey halo. -->
+  <path d="M26.20 35.00L41.31 12.93" fill="none" stroke="#1B8A50"
+        stroke-width="4.9" stroke-linecap="round" opacity=".55"/>
+  <path d="M44.00 9.00L42.86 15.91L37.98 12.56Z"
+        fill="#1B8A50" opacity=".55" stroke="#1B8A50" stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <path d="M26.20 35.00L41.31 12.93" fill="none" stroke="url(#ARROWGRAD)"
+        stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M44.00 9.00L42.86 15.91L37.98 12.56Z"
+        fill="url(#ARROWGRAD)"/>
 </svg>
