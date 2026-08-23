@@ -64,19 +64,21 @@ is issued.
 
 ## Outstanding — needs real information
 
-The site deliberately does not invent facts. These still need supplying:
+Supplied and live: tagline ("Your Sourcing Partner"), contact email, registered
+address, business hours.
 
-- **Registered address** and **phone number** — currently shown as "to be
-  published" placeholders in the contact section.
-- **Email hosting** for `info@` / `sales@ctiworld.online`. The addresses are
-  referenced throughout but will bounce until mail is configured for the domain.
-- **LinkedIn / X URLs** — footer social links point at `#`.
+Still outstanding:
+
+- **LinkedIn / X URLs** — footer social links still point at `#`.
+- **Phone number** — not published anywhere on the site.
 - **Company metrics.** Earlier copy claimed "25+ years", "50+ research patents"
-  and "98% client satisfaction". These were not verifiable and have been removed
+  and "98% client satisfaction". These were not verifiable and were removed
   rather than published as fact. Add them back once accurate.
-- **A transparent logo asset.** `PHOTO-2026-04-05-17-43-25.jpg` is a photograph
-  of the logo on a wall, so it cannot sit on the dark footer. The nav and footer
-  use an inline SVG that mirrors the mark; replace it with the real vector file
-  when available.
-- **A form backend.** Submissions currently open the visitor's mail client.
+- **A vector logo.** `PHOTO-2026-04-05-17-43-25.jpg` is a photograph of the logo
+  on a wall, so it has a grey background and cannot sit on the dark footer. The
+  nav and footer use an inline SVG that mirrors the mark; replace it with a real
+  SVG or transparent PNG when one exists.
+- **A form backend.** Submissions open the visitor's mail client via `mailto:`.
   Point the form at Formspree, Basin or similar for reliable capture.
+- **Domain email** (optional). Contact runs through a Gmail address; `info@` and
+  `sales@ctiworld.online` would need mail hosting on the domain.

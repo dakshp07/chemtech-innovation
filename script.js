@@ -154,13 +154,13 @@
                 message
             ].join('\n');
 
-            window.location.href = 'mailto:info@ctiworld.online'
+            window.location.href = 'mailto:innovationchemtech@gmail.com'
                 + '?subject=' + encodeURIComponent(subject)
                 + '&body=' + encodeURIComponent(body);
 
             if (status) {
                 status.textContent = 'Your email client should now open with this enquiry ready to send. '
-                    + 'If nothing happened, email info@ctiworld.online directly.';
+                    + 'If nothing happened, email innovationchemtech@gmail.com directly.';
                 status.classList.add('is-ok');
                 status.hidden = false;
             }
