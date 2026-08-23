@@ -1,164 +1,82 @@
+# ChemTech Innovation (CTI) — ctiworld.online
 
-# ChemTech Innovation Website
+Marketing site for ChemTech Innovation: chemicals and raw materials, pharma
+intermediates, CRO, CDMO, technical consultancy and M&A advisory.
 
-A modern, professional, and fully responsive website for ChemTech Innovation - a leading chemical technology company.
+Static HTML/CSS/JS — no build step, no dependencies. Deployed via GitHub Pages.
 
-## 🎨 Design Features
+## Local development
 
-### Modern Color Palette
-- **Primary Blue**: #0066CC - Professional and trustworthy
-- **Secondary Teal**: #00A5A5 - Innovation and sustainability
-- **Accent Orange**: #FF6B35 - Energy and action
-- **Dark Navy**: #1A1A2E - Sophistication
-- **Clean Backgrounds**: White and light grays for excellent readability
-
-### UI Improvements Over Reference Site
-1. **Better Typography**: Using Inter and Poppins fonts for modern readability
-2. **Enhanced Visual Hierarchy**: Clear section badges and structured content
-3. **Smooth Animations**: Fade-in effects and scroll-triggered animations
-4. **Modern Card Designs**: Elevated cards with hover effects
-5. **Professional Gradients**: Subtle blue-to-teal gradients for depth
-6. **Improved Spacing**: Better breathing room between sections
-
-## 📱 Responsive Design
-
-The website is fully mobile-friendly with:
-- Responsive navigation with hamburger menu on mobile
-- Flexible grid layouts that adapt to screen size
-- Touch-friendly buttons and interactive elements
-- Optimized images and content for all devices
-- Breakpoints: 968px, 768px, and 480px
-
-## 🚀 Features
-
-### Sections
-1. **Hero Section**: Eye-catching gradient background with company tagline
-2. **About Section**: Company overview with statistics and achievements
-3. **Services Section**: 6 comprehensive service cards with icons
-4. **Products Section**: 3 featured product categories with images
-5. **CTA Section**: Call-to-action with animated pattern background
-6. **Contact Section**: Contact information and functional form
-7. **Footer**: Complete footer with links and company info
-
-### Interactive Elements
-- Smooth scroll navigation
-- Active link highlighting based on scroll position
-- Mobile menu toggle with animation
-- Scroll-triggered animations for sections
-- Counter animations for statistics
-- Parallax effect on hero section
-- Hover effects on all interactive elements
-
-## 📁 Project Structure
-
-```
-chemtech/
-├── index.html              # Main HTML file
-├── styles.css              # Complete stylesheet with responsive design
-├── script.js               # JavaScript for interactivity
-├── PHOTO-2026-04-05-17-43-25.jpg  # Company logo
-└── README.md               # This file
+```bash
+python3 -m http.server 8000        # http://localhost:8000
 ```
 
-## 🛠️ Technologies Used
+Add `--bind 0.0.0.0` to reach it from other devices on the same network. Note
+that exposes the whole directory to everyone on that network — avoid on
+untrusted or public Wi-Fi.
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with flexbox and grid
-- **JavaScript (ES6+)**: Interactive features
-- **Google Fonts**: Inter and Poppins
-- **Unsplash Images**: High-quality placeholder images (external CDN)
+## Structure
 
-## 🎯 Key Improvements
+| File | Purpose |
+| --- | --- |
+| `index.html` | Single-page site. All SVG icons are defined once as `<symbol>`s at the top and referenced with `<use>`. |
+| `styles.css` | Design tokens in `:root`, then components in section order. |
+| `script.js` | Progressive enhancement only. One rAF-throttled scroll listener drives the navbar, active link and back-to-top. |
+| `favicon.svg` | Hexagon brand mark. |
+| `CNAME` | Custom domain for GitHub Pages. |
+| `.nojekyll` | Serve files as-is, skip Jekyll. |
 
-### Compared to Reference Site (dagaglobal.com)
+## Design tokens
 
-1. **Better Color Scheme**: Professional blue/teal palette vs basic red
-2. **Modern Typography**: Contemporary font pairing for better readability
-3. **Enhanced UI Components**: Cleaner cards, better buttons, modern icons
-4. **Improved Animations**: Smooth, purposeful animations throughout
-5. **Better Mobile Experience**: More intuitive mobile navigation
-6. **Professional Spacing**: Better use of whitespace and padding
-7. **Modern Shadows**: Subtle elevation for depth
-8. **Consistent Design Language**: Cohesive styling throughout all sections
+Derived from the brand mark — navy wordmark, emerald "INNOVATION", blue-to-green
+hexagon gradient.
 
-## 🌐 Browser Support
+- Navy `#10233F` → `#1B3A6B` — headings, footer, dark surfaces
+- Blue `#1565C0` — primary actions, links, icon fills
+- Green `#2E9E4F` / `#46BD6B` — accents, confirmation, gradient terminus
+- Neutrals `#0E1726` → `#F7F9FC`, hairline borders `#E3E8EF`
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+Change a token in `:root` and it propagates; avoid hard-coded hex values in
+component rules.
 
-## 📝 Customization
+## Accessibility
 
-### To Update Company Logo
-Replace `PHOTO-2026-04-05-17-43-25.jpg` with your logo file and update references in:
-- Line 16 (navbar logo)
-- Line 366 (footer logo)
+Skip link, visible `:focus-visible` rings, labelled form fields, `aria-expanded`
+on the menu toggle, `role="status"` on the form result, and a
+`prefers-reduced-motion` block that disables animation and scroll-reveal.
 
-### To Change Colors
-Update CSS variables in `styles.css` (lines 17-34):
-```css
-:root {
-    --primary-color: #0066CC;
-    --secondary-color: #00A5A5;
-    /* ... other colors ... */
-}
-```
+## Deployment
 
-### To Update Content
-- Edit text directly in `index.html`
-- Update placeholder images by replacing Unsplash URLs
-- Modify service icons by updating SVG paths
+GitHub Pages serves `main`. Pushing to `main` publishes.
 
-## 🚀 Deployment
+DNS for the apex domain at Namecheap (Advanced DNS):
 
-Simply upload all files to your web server:
-1. Upload `index.html`, `styles.css`, `script.js`, and logo image
-2. Ensure proper file permissions
-3. Access via your domain
+| Type | Host | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `dakshp07.github.io.` |
 
-### Recommended Hosting
-- Netlify (free tier available)
-- Vercel (free tier available)
-- GitHub Pages
-- Traditional web hosting
+Then enable **Enforce HTTPS** in the repo's Pages settings once the certificate
+is issued.
 
-## 📧 Contact Form
+## Outstanding — needs real information
 
-The contact form currently displays an alert on submission. To make it functional:
+The site deliberately does not invent facts. These still need supplying:
 
-1. Set up a backend API endpoint
-2. Update the form submission handler in `script.js` (lines 65-81)
-3. Add proper email sending functionality
-4. Consider using services like:
-   - Formspree
-   - EmailJS
-   - Custom backend with Node.js/PHP
-
-## ✨ Future Enhancements
-
-Potential improvements:
-- Add blog section for company news
-- Implement case studies/portfolio section
-- Add client testimonials carousel
-- Integrate with CMS for easy content updates
-- Add multi-language support
-- Implement dark mode toggle
-- Add loading animations
-- Integrate analytics (Google Analytics)
-
-## 📄 License
-
-© 2026 ChemTech Innovation. All rights reserved.
-
-## 🤝 Credits
-
-- Design & Development: Custom build
-- Fonts: Google Fonts (Inter, Poppins)
-- Icons: Heroicons (via inline SVG)
-- Images: Unsplash (placeholder images)
-
----
-
-**Note**: Remember to replace placeholder images with actual company photos before going live!
+- **Registered address** and **phone number** — currently shown as "to be
+  published" placeholders in the contact section.
+- **Email hosting** for `info@` / `sales@ctiworld.online`. The addresses are
+  referenced throughout but will bounce until mail is configured for the domain.
+- **LinkedIn / X URLs** — footer social links point at `#`.
+- **Company metrics.** Earlier copy claimed "25+ years", "50+ research patents"
+  and "98% client satisfaction". These were not verifiable and have been removed
+  rather than published as fact. Add them back once accurate.
+- **A transparent logo asset.** `PHOTO-2026-04-05-17-43-25.jpg` is a photograph
+  of the logo on a wall, so it cannot sit on the dark footer. The nav and footer
+  use an inline SVG that mirrors the mark; replace it with the real vector file
+  when available.
+- **A form backend.** Submissions currently open the visitor's mail client.
+  Point the form at Formspree, Basin or similar for reliable capture.
