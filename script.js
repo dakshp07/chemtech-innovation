@@ -202,8 +202,8 @@
                     throw new Error(result.body && result.body.message ? result.body.message : 'Send failed');
                 }
                 form.reset();
-                setStatus('Thank you \u2014 your enquiry has been sent. We usually reply within '
-                    + 'one business day.', 'ok');
+                setStatus('Thank you \u2014 your enquiry has been sent. We usually reply '
+                    + 'within two business days.', 'ok');
             })
             .catch(function () {
                 setStatus('Sorry, the enquiry could not be sent. Please email '
